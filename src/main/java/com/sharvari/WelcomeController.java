@@ -11,4 +11,11 @@ public class WelcomeController {
 	{
 		return "Welcome!!!!!!!!!";
 	}
+@Value("${server.port}")
+	private int serverPort;
+	
+	public int returnServerPort()
+	{
+		return serverPort;
+	}
 }
