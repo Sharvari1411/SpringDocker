@@ -12,7 +12,7 @@ import org.springframework.test.context.TestPropertySource;
 @SpringBootTest
 @TestPropertySource("/application-prod.properties")
 class SpringDockerApplicationTests {
-	private final static int EXPECTED_PORT = 7777;
+	private final static int EXPECTED_PORT = 8190;
 	@Value("${server.port}")
 	private int serverPort;
 	@Autowired
