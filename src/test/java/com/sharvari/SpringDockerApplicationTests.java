@@ -7,15 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
+@TestPropertySource("/application-prod.properties")
 class SpringDockerApplicationTests {
 	private final static int EXPECTED_PORT = 7777;
-	
+	@Value("${server.port}")
+	private int serverPort;
 	@Autowired
 	WelcomeController welcomeController;
 	@Test
 	void contextLoads() {
-		int serverPort=welcomeController.returnServerPort();
 		assertEquals(EXPECTED_PORT,serverPort);
 	}
 
 }
+
